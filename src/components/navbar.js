@@ -7,6 +7,8 @@ import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 
+import { Link } from 'react-scroll';
+
 import './NavbarStyles.css';
 
 function Navbar() {
@@ -15,15 +17,17 @@ function Navbar() {
     const handleNav = () => setNav(!nav);
 
     return (
-        <div className={nav ? 'navBar navBar-bg' : 'navBar'}>
+        <div name='home' className={nav ? 'navBar navBar-bg' : 'navBar'}>
             <div className={nav ? 'logo dark': 'logo'}>
                 <h2>spaceAir</h2>
             </div>
             <ul className='nav-menu'>
-                <li>HOME</li>
-                <li>ABOUT</li>
-                <li>BOOK</li>
-                <li>SEARCH</li>
+            <Link to='home' smooth={true} duration={500}><li>Home</li></Link>
+                <Link to='destinations' smooth={true} duration={500}><li>Destinations</li></Link>
+                <Link to='carousel' smooth={true} duration={500}><li>Travel</li></Link>
+                <Link to='search' smooth={true} duration={500}><li>Book</li></Link>
+                <Link to='views' smooth={true} duration={500}><li>Views</li></Link>
+                
             </ul>
             <div className='nav-icons'>
                 <FaSearch style={{marginRight: '1rem'}} />
@@ -35,10 +39,11 @@ function Navbar() {
             </div>
             <div className={nav ? 'mobile-menu active' : 'mobile-menu'}>
                 <ul className='mobile-nav'>
-                    <li>HOME</li>
-                    <li>ABOUT</li>
-                    <li>BOOK</li>
-                    <li>SEARCH</li>
+                <Link to='destinations' smooth={true} duration={500}><li>Destinations</li></Link>
+                <Link to='carousel' smooth={true} duration={500}><li>Travel</li></Link>
+                <Link to='search' smooth={true} duration={500}><li>Book</li></Link>
+                <Link to='views' smooth={true} duration={500}><li>Views</li></Link>
+                   
                 </ul>
                 <div className='mobile-menu-button'>
                     <div className='menu-icons'>
